@@ -1,0 +1,25 @@
+body{
+    align-items: center;
+    align-content: center;
+}
+#main{
+    align-items: center;
+    align-content: center;
+    display: inline-block;
+}
+.cell{
+    width: 4em;
+    height: 4em;
+    margin: .24em;
+    border-radius: .24em;
+    display: inline-block;
+}
+.active{
+    background-color:green;
+    /* width: 25em;
+    height: 25em;
+    border-radius: 4em; */
+}
+.inactive{
+    background-color:lightgray;
+}
