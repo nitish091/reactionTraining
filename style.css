@@ -5,7 +5,23 @@ body{
 #main{
     align-items: center;
     align-content: center;
-    display: inline-block;
+    text-align: center;
+    display: block;
+}
+#cellContainer{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    display: block;
+}
+#timer{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    display: block;
+    color: green;
+    padding: .24em;
+    background-color: lightgray;
 }
 .cell{
     width: 4em;

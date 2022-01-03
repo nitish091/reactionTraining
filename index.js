@@ -11,10 +11,10 @@ function setup(){
         for(var  j = 0; j < col; j++){
             var div = document.createElement("div");
             div.setAttribute("class", "cell inactive");
-            main.appendChild(div);
+            cellContainer.appendChild(div);
         }
         var br = document.createElement("br");
-        document.getElementById("main").appendChild(br);
+        cellContainer.appendChild(br);
     }
 }
 function lightUp(){
@@ -35,6 +35,20 @@ function lightUp(){
 //     }
 // }
 
+function showRes(){
+    
+}
+
+
+var timerMM = 2;
+var timerSS = 00;
+
+timer.innerText = timerMM + ":" + timerSS;
+// timer.style.display="block";
+// timer.style.alignContent = "center";
+// main.appendChild(timer);
+// var br = document.createElement("br");
+// main.appendChild(br);
 setup();
 
 A = document.getElementsByClassName("cell")
@@ -51,7 +65,28 @@ for(let element of A){
         }
     });
 }
-    
+
+
+var timerInterval = setInterval(()=>{
+    if(timerSS>0){
+        timerSS--;
+    }
+    else if(timerMM>0){
+        timerMM--;
+        timerSS=59;
+    }
+    else{
+        clearInterval(timerInterval);
+    }
+    timer.innerText = timerMM + ":" +timerSS;
+},1000);
+
+var stopperInterval = setInterval(()=>{
+    if(timerSS == timerMM == 0){
+        showRes();
+        clearInterval(stopperInterval);
+    }
+},1000);
 lightUp();
 
 
